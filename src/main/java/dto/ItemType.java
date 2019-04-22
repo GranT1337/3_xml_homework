@@ -22,27 +22,27 @@ public class ItemType {
 
     @XmlElement
     @JsonProperty("manufacturer")
-    protected String manufacturer;
+    private String manufacturer;
 
     @XmlElement
     @JsonProperty("model")
-    protected String model;
+    private String model;
 
     @XmlElement(name="date_of_manufacture")
     @JsonProperty("dateOfManufacture")
-    protected String dateOfManufacture;
+    private String dateOfManufacture;
 
     @XmlElement
     @JsonProperty("color")
-    protected String color;
+    private String color;
 
     @XmlElement
     @JsonProperty("price")
-    protected BigDecimal price;
+    private BigDecimal price;
 
     @XmlElement
     @JsonProperty("amount")
-    protected BigInteger amount;
+    private BigInteger amount;
 
 
     @Override

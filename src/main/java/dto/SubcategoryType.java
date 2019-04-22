@@ -13,13 +13,13 @@ import java.util.List;
 })
 public class SubcategoryType {
 
-    protected List<ItemType> item;
+    private List<ItemType> item;
     @XmlAttribute(name = "name", required = true)
-    protected String name;
+    private String name;
 
     public List<ItemType> getItem() {
         if (item == null) {
-            item = new ArrayList<ItemType>();
+            item = new ArrayList<>();
         }
         return this.item;
     }
