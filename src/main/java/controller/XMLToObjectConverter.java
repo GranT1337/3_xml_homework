@@ -20,19 +20,19 @@ public class XMLToObjectConverter {
         List<CategoryType> itemsList = new ArrayList<>();
 
         try {
-            XMLStreamReader xmlr = XMLInputFactory
+            XMLStreamReader xmlStreamReader = XMLInputFactory
                     .newInstance()
                     .createXMLStreamReader(fileName, new FileInputStream(fileName));
 
-            while (xmlr.hasNext()) {
+            while (xmlStreamReader.hasNext()) {
 
-                xmlr.next();
+                xmlStreamReader.next();
 
-                if (xmlr.isStartElement() && xmlr.getLocalName().equals("category")) {
-                    JAXBContext jc = JAXBContext.newInstance(CategoryType.class);
-                    Unmarshaller unmarshaller = jc.createUnmarshaller();
-                    JAXBElement<CategoryType> jb = unmarshaller.unmarshal(xmlr, CategoryType.class);
-                    CategoryType items = jb.getValue();
+                if (xmlStreamReader.isStartElement() && xmlStreamReader.getLocalName().equals("category")) {
+                    JAXBContext jaxbContext = JAXBContext.newInstance(CategoryType.class);
+                    Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+                    JAXBElement<CategoryType> jaxbElement = unmarshaller.unmarshal(xmlStreamReader, CategoryType.class);
+                    CategoryType items = jaxbElement.getValue();
                     itemsList.add(items);
                 }
             }

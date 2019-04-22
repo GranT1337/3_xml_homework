@@ -14,7 +14,7 @@ import java.util.List;
 public class CategoryType {
 
     private List<SubcategoryType> subcategory;
-    @XmlAttribute(name = "name", required = true)
+    @XmlAttribute(name = "name")
     private String name;
 
     public List<SubcategoryType> getSubcategory() {
